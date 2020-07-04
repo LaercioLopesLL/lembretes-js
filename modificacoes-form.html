@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        Nome
+        <input type="text" name="nome" value="Laercio" data-old-value="Laercio"><br>
+        Sobrenome
+        <input type="text" name="sobrenome" value="Lopes" data-old-value="Lopes"><br>
+        Nascimento
+        <input type="date" name="nascimento" value="1986-02-01" data-old-value="1986-02-01"><br>
+        <input type="button" value="Verifique">
+    </form>
+
+    <script>
+        const inputs = document.querySelectorAll('[data-old-value]')
+
+        inputsArray = Array.from(inputs)
+
+        const mudou = inputsArray.some(input=>input.dataset.oldValue != input.value)
+
+        console.log(mudou)
+
+    </script>
+</body>
+</html>
